@@ -1,26 +1,43 @@
 
-Table                 index or null
+Table
+
 
 message
 body       text
 image      string
-group_id   integer    foreign_key: true
-user_id    integer    foreign_key: true
+group_id   integer    t.references :group, foreign_key: true
+user_id    integer    t.references :user, foreign_key: true
 
 belongs_to: user
 belongs_to: group
 
 
+
+
 user
 name      string      null: false
-group_id  integer     foreign_key: true
+group_id  integer     t.references :group, foreign_key: true
 
-belongs_to: group
+has_many: groups, through: :relation
 has_many: messages
+
+
 
 
 group
-name     string       foreign_key: true
+name     string
 
-has_many: users
+has_many: users, through: :relation
 has_many: messages
+
+
+
+relation
+user_id    integer    t.references :user, foreign_key: true
+group_id   integer    t.references :group, foreign_key: true
+
+belongs_to :user
+belongs_to :tag
+
+
+
