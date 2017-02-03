@@ -32,12 +32,6 @@ has_many: messages
 
 
 
-relation
-user_id    integer    t.references :user, foreign_key: true
-group_id   integer    t.references :group, foreign_key: true
-
-belongs_to :user
-belongs_to :tag
 
 
 
