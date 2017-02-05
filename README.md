@@ -23,15 +23,13 @@
 |カラム名|型|
 |:-:|:-:|
 |name|string|
-|group_id|references|
 
 #usre.rb
-'has_mamy: groups, through: :message, source: :group'
 'has_many: messages'
+'has_many: proups, through: :group_member'
 
 #migrationファイル
 't.string :name, null: false, index: true'
-'t.references :group, foreign_key: true, index: true'
 't.timestamps null: false'
 
 
@@ -43,8 +41,25 @@
 
 #group.rb
 'has_many: messages'
-'has_many: users'
+'has_many: users, through: :group_member'
 
 #migrationファイル
 't.string :name, null: false, index: true'
+'t.timestamps null: false'
+
+
+
+#group_member
+|カラム名|型|
+|:-:|:-:|
+|user_id|references|
+|group_id|references|
+
+#group_member.rb
+'belongs_to: group'
+'belongs_to: user'
+
+#migrationファイル
+'t.references :user, foreign_key: true, index: true'
+'t.references :group, foreign_key: true, index: true'
 't.timestamps null: false'
