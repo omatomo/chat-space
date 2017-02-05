@@ -1,4 +1,4 @@
-#comment
+#messagesテーブル
 |カラム名|型|
 |:-:|:-:|
 |body|text|
@@ -6,7 +6,7 @@
 |group_id|references|
 |user_id|references|
 
-#comment.rb
+#message.rb
 'belongs_to: user'
 'belongs_to: group'
 
@@ -19,43 +19,45 @@
 
 
 
-#user
+#usersテーブル
 |カラム名|型|
 |:-:|:-:|
 |name|string|
 
-#usre.rb
+#user.rb
 'has_many: messages'
-'has_many: proups, through: :group_member'
+'has_many: users_groups'
+'has_many: groups, through: :users_groups, dependent: :destroy'
 
 #migrationファイル
-'t.string :name, null: false, index: true'
+'t.string :name, null: false'
 't.timestamps null: false'
 
 
 
-#group
+#groupsテーブル
 |カラム名|型|
 |:-:|:-:|
 |name|string|
 
 #group.rb
 'has_many: messages'
-'has_many: users, through: :group_member'
+'has_many: users_groups'
+'has_many: users, through: :users_groups, dependent: :destroy'
 
 #migrationファイル
-'t.string :name, null: false, index: true'
+'t.string :name, null: false'
 't.timestamps null: false'
 
 
 
-#group_member
+#users_groupsテーブル
 |カラム名|型|
 |:-:|:-:|
 |user_id|references|
 |group_id|references|
 
-#group_member.rb
+#users_group.rb
 'belongs_to: group'
 'belongs_to: user'
 
