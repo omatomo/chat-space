@@ -1,24 +1,75 @@
-# README
+#messagesテーブル
+|カラム名|型|
+|:-:|:-:|
+|body|text|
+|image|string|
+|group_id|references|
+|user_id|references|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#message.rb
 
-Things you may want to cover:
+  *	belongs_to: user
+  *	belongs_to: group
 
-* Ruby version
+#migrationファイル
 
-* System dependencies
+  *	t.text   :body
+  *	t.string :image
+  *	t.references :user, foreign_key: true, index: true
+  *	t.references :group, foreign_key: true, index: true
+  *	t.timestamps null: false
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+#usersテーブル
+|カラム名|型|
+|:-:|:-:|
+|name|string|
 
-* How to run the test suite
+#user.rb
 
-* Services (job queues, cache servers, search engines, etc.)
+  *	has_many: messages
+  *	has_many: users_groups
+  *	has_many: groups, through: :users_groups, dependent: :destroy
 
-* Deployment instructions
+#migrationファイル
 
-* ...
+  *	t.string :name, null: false, index: true
+  *	t.timestamps null: false
+
+
+
+#groupsテーブル
+|カラム名|型|
+|:-:|:-:|
+|name|string|
+
+#group.rb
+
+  *	has_many: messages
+  *	has_many: users_groups
+  *	has_many: users, through: :users_groups, dependent: :destroy
+
+#migrationファイル
+
+  *	t.string :name, null: false, index: true
+  *	t.timestamps null: false
+
+
+
+#users_groupsテーブル
+|カラム名|型|
+|:-:|:-:|
+|user_id|references|
+|group_id|references|
+
+#users_group.rb
+
+  *	belongs_to: group
+  *	belongs_to: user
+
+#migrationファイル
+
+ *	t.references :user, foreign_key: true, index: true
+ *	t.references :group, foreign_key: true, index: true
+ *	t.timestamps null: false
