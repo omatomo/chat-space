@@ -7,10 +7,12 @@
 |user_id|references|
 
 #message.rb
+
   *	belongs_to: user
   *	belongs_to: group
 
 #migrationファイル
+
   *	t.text   :body
   *	t.string :image
   *	t.references :user, foreign_key: true, index: true
@@ -25,12 +27,14 @@
 |name|string|
 
 #user.rb
+
   *	has_many: messages
   *	has_many: users_groups
   *	has_many: groups, through: :users_groups, dependent: :destroy
 
 #migrationファイル
-  *	t.string :name, null: false, index: true  
+
+  *	t.string :name, null: false, index: true
   *	t.timestamps null: false
 
 
@@ -41,11 +45,13 @@
 |name|string|
 
 #group.rb
+
   *	has_many: messages
   *	has_many: users_groups
   *	has_many: users, through: :users_groups, dependent: :destroy
 
 #migrationファイル
+
   *	t.string :name, null: false, index: true
   *	t.timestamps null: false
 
@@ -58,10 +64,12 @@
 |group_id|references|
 
 #users_group.rb
+
   *	belongs_to: group
   *	belongs_to: user
 
 #migrationファイル
+
  *	t.references :user, foreign_key: true, index: true
  *	t.references :group, foreign_key: true, index: true
  *	t.timestamps null: false
