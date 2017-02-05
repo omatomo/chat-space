@@ -11,10 +11,10 @@
 'belongs_to: group'
 
 #migrationファイル
-'t.text   :body
- t.string :image
- t.references :user, foreign_key: true, index: true
- t.references :group, foreign_key: true, index: true
+'t.text   :body  
+ t.string :image  
+ t.references :user, foreign_key: true, index: true  
+ t.references :group, foreign_key: true, index: true  
  t.timestamps null: false'
 
 
@@ -30,7 +30,7 @@
 'has_many: groups, through: :users_groups, dependent: :destroy'
 
 #migrationファイル
-'t.string :name, null: false, index: true
+'t.string :name, null: false, index: true  
  t.timestamps null: false'
 
 
@@ -46,8 +46,8 @@
  has_many: users, through: :users_groups, dependent: :destroy'
 
 #migrationファイル
-'t.string :name, null: false, index: true'
-'t.timestamps null: false'
+'t.string :name, null: false, index: true  
+ t.timestamps null: false'
 
 
 
@@ -62,6 +62,6 @@
 'belongs_to: user'
 
 #migrationファイル
-'t.references :user, foreign_key: true, index: true
-t.references :group, foreign_key: true, index: true
+'t.references :user, foreign_key: true, index: true  
+t.references :group, foreign_key: true, index: true  
 t.timestamps null: false'
