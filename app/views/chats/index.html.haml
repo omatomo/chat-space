@@ -1,45 +1,22 @@
 .header
-  .header__left
-    %p.header__left__name tomohiro
-    %span.header__left__icon
+  .header--left
+    %p.header--left__name tomohiro
+    %span.header--left__icon
       %i(class="fa fa-pencil-square-o fa-lg" aria-hidden="true")
       %i(class="fa fa-cog fa-lg" aria-hidden="true")
-  .header__right
-    .header__right__left
+  .header--right
+    .header--right__left
       %p.group sample
       %p.member members: tomohiro john
-    .header__right__right
+    .header--right__right
       %span.edit Edit
 .contents
   .contents__left
     .contents__left__box
-      .box
-        %p.box__group 神
-        %p.box__message まだメッセージがありません。
-      .box
-        %p.box__group 髪
-        %p.box__message まだメッセージがありません。
-      .box
-        %p.box__group 紙
-        %p.box__message まだメッセージがありません。
+      =render partial: "box"
   .contents__right
     .contents__right__top
-      .case
-        %span.case__name tomohiro
-        %span.case__time 2017/02/21 19:09
-        %p.case__word お腹すいた
-      .case
-        %span.case__name tomohiro
-        %span.case__time 2017/02/21 19:09
-        %p.case__word 頭痛い
-      .case
-        %span.case__name tomohiro
-        %span.case__time 2017/02/21 19:09
-        %p.case__word 背中がかゆい
-      .case
-        %span.case__name tomohiro
-        %span.case__time 2017/02/21 19:09
-        %p.case__word 世界征服
+      =render partial: "case"
     .contents__right__bottom
       .contents__right__bottom__box
         .contents__right__bottom__box__left

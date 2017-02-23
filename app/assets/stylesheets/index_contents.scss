@@ -1,0 +1,93 @@
+.contents{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+
+  &__left{
+    height: 100%;
+    width: 300px;
+    background-color: #2f3e51;
+    float: left;
+    &__box{
+      margin: 23px 20px 0 20px;
+      height: 100%;
+      .box{
+        color: $color;
+        margin-bottom: 42px;
+        &__group{
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__message{
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  &__right{
+    height: 100%;
+    width: calc(100% - 300px);
+    float: right;
+    background-color: #f5f5f5;
+    &__top{
+      margin: 46px 40px 0 40px;
+      height: calc(573px - 138px);
+      .case{
+        margin-bottom: 37px;
+        &__name{
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+        }
+        &__time{
+          font-size: 12px;
+          color: $color2;
+          display: inline-block;
+          margin-left: 10px;
+        }
+        &__word{
+          font-size: 13px;
+          color: #434A54;
+          margin-top: 10px;
+        }
+      }
+    }
+    &__bottom{
+      height: 91px;
+      background-color: #d3d3d3;
+      &__box{
+        height: 51px;
+        padding: 20px 40px;
+        &__left{
+          background-color: white;
+          height: 50px;
+          width: 871px;
+          float: left;
+          position: relative;
+          &__text{
+            margin: 13px 0 0 10px;
+            font-size:  16px;
+            color: #a9a9a9;
+          }
+          .fa-picture-o{
+            position: absolute;
+            top: 17px;
+            right: 10px;
+            color: #696969;
+          }
+        }
+        &__right{
+          height: 50px;
+          background-color: #38AEF0;
+          width: 100px;
+          float: left;
+          margin-left: 15px;
+          &__text{
+            margin: 13px 0 13px 30px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
