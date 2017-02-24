@@ -14,7 +14,7 @@ module ChatSpace
     config.generators do |g|
     	g.helper false
     	g.assets false
-    	g.test_frameowork false
+    	g.test_framework false
     end
   end
 end
