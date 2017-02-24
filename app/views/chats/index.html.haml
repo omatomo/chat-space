@@ -1,0 +1,28 @@
+.header
+  .header--left
+    %p.header--left__name tomohiro
+    %span.header--left__icon
+      %i(class="fa fa-pencil-square-o fa-lg" aria-hidden="true")
+      %i(class="fa fa-cog fa-lg" aria-hidden="true")
+  .header--right
+    .header--right__left
+      %p.group sample
+      %p.member members: tomohiro john
+    .header--right__right
+      %span.edit Edit
+.contents
+  .contents__left
+    .contents__left__box
+      =render partial: "box"
+  .contents__right
+    .contents__right__top
+      =render partial: "case"
+    .contents__right__bottom
+      .contents__right__bottom__box
+        .contents__right__bottom__box__left
+          %p.contents__right__bottom__box__left__text type a message
+          %i(class="fa fa-picture-o" aria-hidden="true")
+        .contents__right__bottom__box__right
+          %p.contents__right__bottom__box__right__text Send
+
+

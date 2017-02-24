@@ -1,0 +1,335 @@
+/*!
+     * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+     * http://cssreset.com
+     * Copyright 2012 Yahoo! Inc. All rights reserved.
+     * http://yuilibrary.com/license/
+     */
+/*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+*/
+/* line 11, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+html {
+  color: #000;
+  background: #FFF;
+}
+
+/*
+    TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+    TODO test putting a class on HEAD.
+        - Fails on FF. 
+*/
+/* line 22, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 50, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 54, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+fieldset,
+img {
+  border: 0;
+}
+
+/*
+    TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+/* line 61, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 74, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 79, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+caption,
+th {
+  text-align: left;
+}
+
+/* line 83, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* line 92, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+q:before,
+q:after {
+  content: '';
+}
+
+/* line 96, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+/* line 102, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+sup {
+  vertical-align: text-top;
+}
+
+/* line 105, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+sub {
+  vertical-align: text-bottom;
+}
+
+/* line 108, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*to enable resizing for IE*/
+/* line 116, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+input,
+textarea,
+select {
+  *font-size: 100%;
+}
+
+/*because legend doesn't inherit in IE */
+/* line 122, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+legend {
+  color: #000;
+}
+
+/* YUI CSS Detection Stamp */
+/* line 126, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/_reset.scss */
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
+/* line 1, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header {
+  width: 100%;
+  height: 100px;
+}
+/* line 5, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header__left {
+  background-color: #253141;
+  width: 300px;
+  height: 100%;
+  float: left;
+}
+/* line 11, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header .name {
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1.7px;
+  display: inline-block;
+  margin: 37px 3px 0 19px;
+}
+/* line 19, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header .fa-cog {
+  color: white;
+  height: 10px;
+  width: 10px;
+}
+/* line 25, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header__right {
+  width: calc(100% - 300px);
+  height: 100%;
+  float: right;
+}
+/* line 29, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header__right__left {
+  margin: 30px 0 0 40px;
+  width: 300px;
+  float: left;
+}
+/* line 33, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header__right__left .group {
+  font-size: 20px;
+  color: #333333;
+  width: 300px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+/* line 40, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header__right__left .member {
+  font-size: 12px;
+  color: #999999;
+  margin: 12px 0 0 0;
+  width: 300px;
+}
+/* line 47, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header__right__right {
+  width: 300px;
+  float: right;
+  height: 100px;
+}
+/* line 51, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.header__right__right .edit {
+  margin: 28px 1px 3px 187px;
+  border: 2px solid #58ACFA;
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 15px;
+  color: #58ACFA;
+}
+
+/* line 63, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents {
+  height: 573px;
+  width: 100%;
+  position: fixed;
+}
+/* line 68, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__left {
+  height: 100%;
+  width: 300px;
+  background-color: #2f3e51;
+  float: left;
+}
+/* line 73, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__left__box {
+  margin: 23px 20px 0 20px;
+  height: 100%;
+}
+/* line 76, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__left__box .box {
+  color: #ffffff;
+  margin-bottom: 42px;
+}
+/* line 79, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__left__box .box__group {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+/* line 83, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__left__box .box__message {
+  font-size: 11px;
+}
+/* line 89, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right {
+  height: 100%;
+  width: calc(100% - 300px);
+  float: right;
+  background-color: #f5f5f5;
+}
+/* line 94, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__top {
+  margin: 46px 40px 0 40px;
+  height: calc(573px - 138px);
+}
+/* line 97, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__top .case {
+  margin-bottom: 37px;
+}
+/* line 99, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__top .case__name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #434A54;
+}
+/* line 104, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__top .case__time {
+  font-size: 12px;
+  color: #999999;
+  display: inline-block;
+  margin-left: 10px;
+}
+/* line 110, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__top .case__word {
+  font-size: 13px;
+  color: #434A54;
+  margin-top: 10px;
+}
+/* line 117, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__bottom {
+  height: 91px;
+  background-color: #d3d3d3;
+}
+/* line 120, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__bottom__box {
+  height: 51px;
+  padding: 20px 40px;
+}
+/* line 123, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__bottom__box__left {
+  background-color: white;
+  height: 50px;
+  width: 871px;
+  float: left;
+}
+/* line 128, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__bottom__box__left__text {
+  margin: 13px 0 0 10px;
+  font-size: 16px;
+  color: #a9a9a9;
+}
+/* line 135, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__bottom__box__right {
+  height: 50px;
+  background-color: #38AEF0;
+  width: 100px;
+  float: left;
+  margin-left: 15px;
+}
+/* line 141, /Users/TOMOHIRO/chat-space/app/assets/stylesheets/stylesheet.scss */
+.contents__right__bottom__box__right__text {
+  margin: 13px 0 13px 30px;
+  color: white;
+}
+
+/*
+ *= require font-awesome
+ */
