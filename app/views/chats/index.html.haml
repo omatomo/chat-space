@@ -1,9 +1,11 @@
 .header
   .header--left
-    %p.header--left__name tomohiro
+    %p.header--left__name 
+      = @user
     %span.header--left__icon
       %i(class="fa fa-pencil-square-o fa-lg" aria-hidden="true")
-      %i(class="fa fa-cog fa-lg" aria-hidden="true")
+      = link_to edit_user_registration_path do
+        .fa.fa-cog{"aria-hidden" => "true"}
   .header--right
     .header--right__left
       %p.group sample
