@@ -11,23 +11,23 @@
     .header--right__left
       %p.group
         =@group.group_name
-      %p.member members: tomohiro john
+      %p.member
+        members:
+        -@group.users.each do |user|
+          =user.name
     .header--right__right
-      = link_to edit_group_path @group  do
+      = link_to edit_group_path @group do
         %span.edit Edit
 .contents
   .contents__left
     .contents__left__box
-      =render partial: "box"
+      =render "groups/box"
   .contents__right
     .contents__right__top
       =render partial: "case"
     .contents__right__bottom
       .contents__right__bottom__box
-        .contents__right__bottom__box__left
-          %p.contents__right__bottom__box__left__text type a message
-          %i(class="fa fa-picture-o" aria-hidden="true")
-        .contents__right__bottom__box__right
-          %p.contents__right__bottom__box__right__text Send
-
-
+        .fa.fa-picture-o{"aria-hidden" => "true"}
+        = form_for [@group, @message] do |f|
+          = f.text_area :body, placeholder: "type a message", class: "contents__right__bottom__box__left"
+          = f.submit "SEND", class: "contents__right__bottom__box__right"

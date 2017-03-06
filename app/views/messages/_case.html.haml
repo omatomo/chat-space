@@ -1,0 +1,8 @@
+-@group.messages.each do|message|
+  .case
+    %span.case__name 
+      =message.user.name
+    %span.case__time 
+      =message.created_at
+    %p.case__word 
+      =message.body

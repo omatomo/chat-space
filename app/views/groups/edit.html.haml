@@ -6,15 +6,13 @@
         .chat-group-form__field--left
           = f.label :グループ名, class: "chat-group-form__label", for: "chat_group_name"
         .chat-group-form__field--right
-          = f.text_area :group_name, row: "1", placeholder: "グループ名を入力してください", id: "chat_group_name", class: "chat-group-form__input"
+          = f.text_area :group_name,  rows: 1.7, placeholder: "グループ名を入力してください", id: "chat_group_name", class: "chat-group-form__input"
       .chat-group-form__field.clearfix
         .chat-group-form__field--left
-          = f.label :チャットメンバー, class: "chat-group-form__label", for: "chat_group_チャットメンバー"
+          = f.label :チャットメンバー, class: "chat-group-form__label"
         .chat-group-form__field--right
           #chat-group-users
-            #chat-group-user-22.chat-group-user.clearfix
-              %input{:name => "group[user_ids][]", :type => "hidden", :value => "1"}/
-              %p.chat-group-user__name seo_kyohei
+          = f.collection_check_boxes(:user_ids, User.all, :id, :name)
       .chat-group-form__field.clearfix
         .chat-group-form__field--left
         .chat-group-form__field--right

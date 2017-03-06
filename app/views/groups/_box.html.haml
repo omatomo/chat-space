@@ -1,0 +1,6 @@
+- @groups.each do |group|
+  .box
+    %p.box__group
+      =link_to group.group_name, group_messages_path(group.id), method: :get, :style=>"color: white; text-decoration: none;"
+    %p.box__message
+      =group.messages.last.try(:body) || "まだメッセージがありません。"
