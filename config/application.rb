@@ -15,6 +15,7 @@ module ChatSpace
     config.generators do |g|
     	g.helper false
     	g.assets false
+        g.mailer false
     	g.test_framework false
     end
   end

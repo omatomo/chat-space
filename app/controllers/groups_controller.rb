@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups.order("created_at ASC")
   end
 
   def new
@@ -9,10 +9,14 @@ class GroupsController < ApplicationController
   end
 
   def create
-   Group.create(group_params)
-   name = group_params[:group_name]
-   flash[:notice] = "グループ#{name}が作成されました"
-   redirect_to action: 'index'
+    @group = Group.new(group_params)
+    if @group.save
+     flash[:notice] = "グループ#{group_params[:group_name]}が作成されました"
+     redirect_to action: 'index'
+    else
+     flash[:alert] = "グループ名を入力してください"
+     redirect_to :back
+    end
   end
 
   def edit
@@ -22,8 +26,7 @@ class GroupsController < ApplicationController
   def update
   	group = Group.find(params[:id])
   	group.update(group_params)
-    group_id = group.id
-  	redirect_to group_messages_path group_id
+  	redirect_to group_messages_path group.id
     flash[:notice] = "グループを変更しました。"
   end
 
