@@ -1,13 +1,10 @@
 class MessagesController < ApplicationController
   def create
   	message = Message.new(message_params)
-  	if message.body.blank?
-  	  redirect_to :back
-  	  flash[:alert] = "メッセージを入力してください。"
+  	if message.save
+  	  redirect_to group_messages_path, notice: "メッセージ入力成功しました。"
   	else
-  	  message.save
-  	  redirect_to :back
-  	  flash[:notice] = "メッセージ入力成功しました。"
+  	  redirect_to group_messages_path, alert: "メッセージを入力してください。"
     end
   end
 

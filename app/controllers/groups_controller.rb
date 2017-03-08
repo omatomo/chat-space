@@ -11,27 +11,30 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-     flash[:notice] = "グループ#{group_params[:group_name]}が作成されました"
-     redirect_to action: 'index'
+     redirect_to groups_path, notice: "グループ#{group_params[:group_name]}が作成されました"
     else
-     flash[:alert] = "グループ名を入力してください"
-     redirect_to :back
+     redirect_to new_group_path, alert: "グループ名を入力してください"
     end
   end
 
   def edit
-  	@group = Group.find(params[:id])
+    @group = Group.find(params[:id])
   end
 
   def update
-  	group = Group.find(params[:id])
-  	group.update(group_params)
-  	redirect_to group_messages_path group.id
-    flash[:notice] = "グループを変更しました。"
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+    	@group.update(group_params)
+    	redirect_to group_messages_path @group.id, notice: "グループを変更しました。"
+    else
+      redirect_to edit_group_path @group.id, alert: "try again"
+    end
   end
 
   private
+
   def group_params
   	params.require(:group).permit(:group_name, {:user_ids => []})
   end
+
 end
