@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
   def update
     if @group.update(group_params)
       if @group.users.include?(current_user)
-    	 redirect_to group_messages_path @group.id, notice: "グループを変更しました。"
+    	  redirect_to group_messages_path @group.id, notice: "グループを変更しました。"
       else
         redirect_to root_path
       end
