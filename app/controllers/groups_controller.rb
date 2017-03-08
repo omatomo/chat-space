@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:edit, :update]
 
   def index
     @groups = current_user.groups.order("created_at ASC")
@@ -18,13 +19,10 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update(group_params)
-    	@group.update(group_params)
     	redirect_to group_messages_path @group.id, notice: "グループを変更しました。"
     else
       redirect_to edit_group_path @group.id, alert: "try again"
@@ -35,6 +33,10 @@ class GroupsController < ApplicationController
 
   def group_params
   	params.require(:group).permit(:group_name, {:user_ids => []})
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 
 end
