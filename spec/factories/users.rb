@@ -1,6 +1,6 @@
 FactoryGirl.define do
 	factory :user do
-		id                    {Faker::Number.digit}
+		id                    1
 		name                  "fack"
 		email                 "aaaa@aaaa.a"
 		password              "00000000"
