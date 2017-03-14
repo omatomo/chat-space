@@ -23,14 +23,14 @@ class GroupsController < ApplicationController
   # end
 
   def create
-    group = Group.new(group_params)
-    if group.save
+    @group = Group.new(group_params)
+    if @group.save
         redirect_to group_chats_path(group),notice:'グループが作成されました'
       else
-        group.errors.full_messages.each do |error|
+        @group.errors.full_messages.each do |error|
           flash[:alert] = error
         end
-        redirect_to action: "new"
+        render 'new'
       end
   end
 
