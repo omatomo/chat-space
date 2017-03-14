@@ -14,7 +14,11 @@ class GroupsController < ApplicationController
     if @group.save
      redirect_to groups_path, notice: "グループ#{group_params[:group_name]}が作成されました"
     else
-       redirect_to new_group_path, alert: "グループ名/ユーザを入力してください。"
+      if @group.errors.include?(:group_name)
+       redirect_to new_group_path, alert: "グループ名を入力してください。"
+     else
+      redirect_to new_group_path, alert: "名前を入力してください。"
+    end
     end
   end
 
