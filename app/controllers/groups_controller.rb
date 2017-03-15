@@ -9,14 +9,31 @@ class GroupsController < ApplicationController
    @group = Group.new
   end
 
+  # def create
+  #   @group = Group.new(group_params)
+  #   if @group.save
+  #    redirect_to groups_path, notice: "グループ#{group_params[:group_name]}が作成されました"
+  #   else
+  #     if @group.errors.include?(:group_name)
+  #      redirect_to new_group_path, alert: "グループ名を入力してください。"
+  #    else
+  #      render 'new', alert: "名前を入力してください。"
+  #   end
+  #   end
+  # end
+
   def create
     @group = Group.new(group_params)
     if @group.save
-     redirect_to groups_path, notice: "グループ#{group_params[:group_name]}が作成されました"
-    else
-     redirect_to new_group_path, alert: "グループ名を入力してください"
-    end
+        redirect_to group_chats_path(group),notice:'グループが作成されました'
+      else
+        @group.errors.full_messages.each do |error|
+          flash[:alert] = error
+        end
+        render 'new'
+      end
   end
+
 
   def edit
   end

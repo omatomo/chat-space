@@ -19,3 +19,4 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:body).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 end
+
