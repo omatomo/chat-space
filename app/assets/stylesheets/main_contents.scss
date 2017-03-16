@@ -30,15 +30,17 @@
     width: calc(100% - 300px);
     float: right;
     background-color: #f5f5f5;
+    overflow-y: scroll;
     &__top{
       margin: 46px 40px 0 40px;
       height: calc(100% - 91px);
-      .case{
+      .message__case{
         margin-bottom: 37px;
         &__name{
           font-size: 16px;
           font-weight: bold;
           color: #434A54;
+          display: inline-block;
         }
         &__time{
           font-size: 12px;
@@ -57,21 +59,22 @@
       width: 100%;
       height: 91px;
       background-color: #d3d3d3;
+      position: fixed;
       &__box{
         width: 100%;
         height: 51px;
         padding: 20px 40px;
+        position: relative;
         .fa-picture-o{
-            position: absolute;
-            top: 517px;
-            right: 170px;
-            color: #696969;
-            float: left;
+          position: absolute;
+          top: 37px;
+          left: 840px;
+          color: #696969;
           }
           &__left{
             background-color: white;
             height: 50px;
-            width: calc(100% - 185px);
+            width: calc(100% - 520px);
             float: left;
             &__text{
               margin: 13px 0 0 10px;
