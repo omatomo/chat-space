@@ -28,15 +28,15 @@ $(function() {
       processData: false,
       contentType: false,
       dataType: 'json'
-      context: this
     })
     .done(function(data) {
       buildHTML(data);
-      this.reset();
+      console.log('成功');
+       $('.contents__right__bottom__box__left').val('');
       // fileField.val('');
     })
     .fail(function() {
-      alert('失敗');
+      alert('メッセージを入力してください。');
     });
     return false
   });
