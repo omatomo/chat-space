@@ -30,5 +30,5 @@
       .contents__right__bottom__box
         .fa.fa-picture-o{"aria-hidden" => "true"}
         = form_for [@group, @message], url: {action: :create},  html: { id: "new_message" }, remote: true do |f|
-          = f.text_field :body, placeholder: "type a message", class: "contents__right__bottom__box__left"
-          = f.submit "SEND", class: "contents__right__bottom__box__right"
+          = f.text_field :body, placeholder: "   type a message", class: "contents__right__bottom__box__left"
+          = f.submit "SEND", class: "contents__right__bottom__box__right__text"

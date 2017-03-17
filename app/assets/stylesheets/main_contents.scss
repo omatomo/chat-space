@@ -34,24 +34,27 @@
     &__top{
       margin: 46px 40px 0 40px;
       height: calc(100% - 91px);
-      .message__case{
-        margin-bottom: 37px;
-        &__name{
-          font-size: 16px;
-          font-weight: bold;
-          color: #434A54;
-          display: inline-block;
-        }
-        &__time{
-          font-size: 12px;
-          color: $color2;
-          display: inline-block;
-          margin-left: 10px;
-        }
-        &__word{
-          font-size: 13px;
-          color: #434A54;
-          margin-top: 10px;
+      .message{
+        padding-bottom: 30px;
+        &__case{
+          margin-bottom: 37px;
+          &__name{
+            font-size: 16px;
+            font-weight: bold;
+            color: #434A54;
+            display: inline-block;
+          }
+          &__time{
+            font-size: 12px;
+            color: $color2;
+            display: inline-block;
+            margin-left: 10px;
+          }
+          &__word{
+            font-size: 13px;
+            color: #434A54;
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -76,22 +79,18 @@
             height: 50px;
             width: calc(100% - 520px);
             float: left;
-            &__text{
-              margin: 13px 0 0 10px;
-              font-size:  16px;
-              color: #a9a9a9;
-            }
+            margin: 0 0 0 10px;
+            font-size:  16px;
+            color: #a9a9a9;
+            font-color: black;
           }
-          &__right{
+          &__right__text{
             height: 50px;
             background-color: #38AEF0;
             width: 100px;
             float: left;
-            margin-left: 15px;
-            &__text{
-              margin: 13px 0 13px 30px;
-              color: white;
-            }
+            margin: 0 0 13px 30px;
+            color: white;
           }
       }
     }
