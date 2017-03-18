@@ -86,7 +86,8 @@
     border-bottom: 1px solid #ddd;
 
     &__name {
-      display: block;
+      display: inline-block;
+      margin-right: 40px;
     }
 
     &__btn {
