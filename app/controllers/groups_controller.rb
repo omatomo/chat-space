@@ -7,20 +7,8 @@ class GroupsController < ApplicationController
 
   def new
    @group = Group.new
+   @group.users << current_user
   end
-
-  # def create
-  #   @group = Group.new(group_params)
-  #   if @group.save
-  #    redirect_to groups_path, notice: "グループ#{group_params[:group_name]}が作成されました"
-  #   else
-  #     if @group.errors.include?(:group_name)
-  #      redirect_to new_group_path, alert: "グループ名を入力してください。"
-  #    else
-  #      render 'new', alert: "名前を入力してください。"
-  #   end
-  #   end
-  # end
 
   def create
     @group = Group.new(group_params)
@@ -30,12 +18,14 @@ class GroupsController < ApplicationController
         @group.errors.full_messages.each do |error|
           flash[:alert] = error
         end
-        render 'new'
-      end
+    end
   end
 
 
   def edit
+    @users = User.where.not(id: current_user)
+    @members = @group.users.where.not(id: current_user)
+    @group = Group.find(params[:id])
   end
 
   def update
@@ -59,5 +49,7 @@ class GroupsController < ApplicationController
   def set_group
     @group = Group.find(params[:id])
   end
+
+
 
 end

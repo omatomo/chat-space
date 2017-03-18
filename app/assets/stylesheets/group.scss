@@ -1,3 +1,10 @@
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
@@ -40,6 +47,7 @@
   }
 
   &__field {
+    @include clearfix;
     margin-top: 30px;
 
     &--left {
@@ -62,10 +70,11 @@
       text-align: right;
     }
 
-    .chat-group-form__input {
+     .chat-group-form__field--right__input {
       float: left;
       width: 100%;
-      padding: 20px 0 0 17px;
+      line-height: 30px;
+      padding: 10px 15px;
       box-sizing: border-box;
     }
   }
@@ -77,11 +86,10 @@
     border-bottom: 1px solid #ddd;
 
     &__name {
-      float: left;
+      display: block;
     }
 
     &__btn {
-      float: right;
       display: inline-block;
       cursor: pointer;
 
@@ -104,8 +112,3 @@
   }
 }
 
-.clearfix:after{
-  content: "";
-  clear: both;
-  display: block;
-}
