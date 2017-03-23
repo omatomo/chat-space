@@ -1,13 +1,13 @@
-$(document).on("turbolinks:load", function() {
+$(function() {
 
   function BuildSearchedUsers (person) {
     var result = '<div class="chat-group-user">' +
-                    '<li class="chat-group-user__name">' +
-                    person.name +
-                    '</li>' +
-                    '<a class="chat-group-user__btn chat-group-user__btn--add" data-userid="' +person.id + '" data-username="' + person.name + '">追加' +
-                    '</a>' +
-                  '</div>'
+                  '<li class="chat-group-user__name">' +
+                  person.name +
+                  '</li>' +
+                  '<a class="chat-group-user__btn chat-group-user__btn--add" data-userid="' +person.id + '" data-username="' + person.name + '">追加' +
+                  '</a>' +
+                '</div>'
     return result
   }
 
@@ -17,14 +17,12 @@ $(document).on("turbolinks:load", function() {
   }
 
   function SearchUsers() {
-    // var formData = new FormData($('form')[0]);
-    var form = $('#new_group').get(0);
-    var formData = new FormData(form);
+    name = $('#search').val();
     $.ajax({
-      url: '/users',
-      data: formData,
-      dataType: 'json',
-      processData: false
+      url: '/users.json',
+      type: 'GET',
+      data: { name: name },
+      dataType: 'json'
     })
     .done(function(data){
       var html = "";

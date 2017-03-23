@@ -26,7 +26,7 @@ gem 'rails-i18n'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem "font-awesome-rails"
+gem 'carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -45,6 +46,10 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rails-controller-testing'
+end
+
+group :development, :production do
+  gem 'fog'
 end
 
 group :development do
