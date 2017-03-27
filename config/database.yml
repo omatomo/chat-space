@@ -51,6 +51,6 @@ test:
 production:
   <<: *default
   database: chat-space_production
-  username: chat-space
+  username: root
   password: <設定したいパスワード>
   socket: /var/lib/mysql/mysql.sock
